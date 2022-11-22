@@ -14,7 +14,6 @@ const log = debug("bobaui:feed-with-menu-log");
 
 export interface FeedWithMenuProps {
   showSidebar?: boolean;
-  forceHideSidebar?: boolean;
   reachToBottom?: boolean;
   onCloseSidebar?: () => void;
   accentColor?: string;
@@ -56,7 +55,6 @@ const FeedWithMenu: React.FC<FeedWithMenuProps> & CompoundComponents = ({
   onCloseSidebar,
   onReachEnd,
   reachToBottom,
-  forceHideSidebar,
 }) => {
   const scrollableContentRef = React.useRef<HTMLDivElement>(null);
   const intersectionObserverRef = React.useRef<HTMLDivElement>(null);
@@ -189,7 +187,6 @@ const FeedWithMenu: React.FC<FeedWithMenuProps> & CompoundComponents = ({
         <div
           className={classnames("sidebar", {
             visible: showSidebar,
-            "force-hide": forceHideSidebar,
           })}
           // onClick={(e) => {
           //   e.stopPropagation();

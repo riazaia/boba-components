@@ -800,7 +800,6 @@ export const MasonryLayout = () => {
           <FeedWithMenu
             showSidebar={showSidebar}
             onCloseSidebar={closeSidebar}
-            forceHideSidebar={true}
             reachToBottom={showMax < POSTS.length}
             onReachEnd={React.useCallback((more) => {
               setShowMax(
